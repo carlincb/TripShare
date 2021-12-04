@@ -1,2 +1,0 @@
-# TripShare
-A Travel Blog.
