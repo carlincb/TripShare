@@ -2,7 +2,7 @@ $('.comment-btn').click(() => {
     var commentText = $(this).siblings('textarea').text();
 
     $.ajax({
-        url: window.location.href + '/comments',
+        url: window.location.href + 'api/comments',
         dataType: 'json',
         type: 'POST',
         data: commentText,
