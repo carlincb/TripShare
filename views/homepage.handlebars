@@ -1,6 +1,6 @@
 <!-- Loop over each object in the blog array -->
 {{#each blogs as |blog| }}
-<div class="row mb-4 blog">
+<div class="row mb-4 blog justify-center">
   <div class="col-md-6">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -14,11 +14,13 @@
       {{blog.content}}
     </p>
   </div>
+  <div class="col-md-6">
     <p>
-      <textarea></textarea>
-      <button class="comment-btn">Add Comment</button>
+      <textarea rows="10" cols="50"></textarea>
+      <p>
+      <button>Add Comment</button>
+      </p>
     </p>
+    </div>
 </div>
 {{/each}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="./js/addcomment.js"></script>
