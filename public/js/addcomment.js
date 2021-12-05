@@ -8,7 +8,10 @@ commentBtn.click(function(){
         url: window.location.href + 'api/comments',
         dataType: 'json',
         type: 'POST',
-        data: commentText,
+        data: {
+            "commentContent": commentText,
+            "date_created": new Date()
+    },
         
 
         success: () => {
