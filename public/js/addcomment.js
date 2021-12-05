@@ -1,6 +1,6 @@
 $('.comment-btn').click(() => {
-    var commentText = $(this).siblings('textarea').text();
-
+    var commentText = $(this).siblings('textarea').val();
+    console.log(commentText);
     $.ajax({
         url: window.location.href + 'api/comments',
         dataType: 'json',
