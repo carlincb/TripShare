@@ -1,6 +1,6 @@
 header,
 .blog:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0.1rem solid #ccc;
 }
 
 .no-button {
@@ -11,6 +11,7 @@ header,
   color: #1b89bc;
   text-decoration: none;
   font-size: 100%;
+  color: darkgoldenrod;
 }
 
 .no-button:hover {
@@ -19,7 +20,35 @@ header,
 }
 
 textarea {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+body {
+  background-color: rgb(246, 249, 252);
+  background-image: url('../images/annie-spratt-qyAka7W5uMY-unsplash.jpg');
+}
+
+main {
+  background-color: rgba(248, 248, 255, 0.625);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+header {
+  background-color: rgb(20, 58, 58);
+  color: darkgoldenrod;
+}
+/* Text color of links set when unvisited. */
+a:link {
+  color: darkgoldenrod;
+}
+/* Text color of links set when visited, i.e. after the link has been clicked on. */
+a:visited {
+  color: darkgoldenrod;
+}
+/* Text color changes and box appears when mouse hovers over link. */
+a:hover {
+  color: darkgoldenrod;
 }

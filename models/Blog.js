@@ -30,6 +30,11 @@ Blog.init(
         model: 'user',
         key: 'id',
       },
+      image: {
+        type: DataTypes.MEDIUMBLOB,
+        allowNull: true,
+        defaultValue: null
+      }
     },
   },
   {

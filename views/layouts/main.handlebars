@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><i class="fas fa-globe-europe"></i>TripShare</title>
+  <title>TripShare</title>
   <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -13,6 +13,7 @@
     />
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -43,8 +44,10 @@
     </footer>
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
+  <script src="/js/addcomment.js"></script>
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
