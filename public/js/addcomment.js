@@ -5,6 +5,8 @@ commentBtn.click(function(){
     commentText = $(this).siblings('textarea').val();
     console.log(commentText);
     blogId = $(this).parents('.blog').attr('blog-id');
+    console.log(blogId);
+    commentAppendSpot = $(this).parent();
 
     $.ajax({
         url: window.location.href + 'api/comments',
@@ -17,8 +19,10 @@ commentBtn.click(function(){
     },
         
 
-        success: () => {
-            console.log("Comment sent successfully");
+        success: function(){
+            console.log('comment added successfully');
+            console.log(commentAppendSpot)
+            commentAppendSpot.append(`<p>${commentText}</p>`);
         }
     });
 })
