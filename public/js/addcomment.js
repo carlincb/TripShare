@@ -23,6 +23,10 @@ commentBtn.click(function(){
             console.log('comment added successfully');
             console.log(commentAppendSpot)
             commentAppendSpot.append(`<p>${commentText}</p>`);
+        },
+
+        error: function(){
+            alert("There was an error sending your comment. Please try again later.");
         }
     });
 })
