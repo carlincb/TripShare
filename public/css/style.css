@@ -2,21 +2,18 @@ header,
 .blog:not(:last-child) {
   border-bottom: 0.1rem solid #ccc;
 }
+h1 {
+  font-family: 'Special Elite', cursive;
+}
 
 .no-button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
   text-decoration: none;
   font-size: 100%;
   color: darkgoldenrod;
-}
-
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
 }
 
 textarea {
@@ -50,5 +47,20 @@ a:visited {
 }
 /* Text color changes and box appears when mouse hovers over link. */
 a:hover {
-  color: darkgoldenrod;
+  color: rgb(135, 103, 23);
+}
+button:hover {
+  color: rgb(135, 103, 23);
+  opacity: 0.8;
+}
+.comment-btn {
+  background-color: rgb(36, 86, 87);
+  color: whitesmoke;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: white;
+}
+.comment-btn:hover {
+  color: whitesmoke;
 }
