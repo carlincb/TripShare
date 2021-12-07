@@ -23,7 +23,9 @@ const newFormHandler = async (event) => {
     }
   };
 
+  
+  
+
   document
     .querySelector('.edit-blog-form')
     .addEventListener('submit', newFormHandler);
-  
