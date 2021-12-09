@@ -20,6 +20,6 @@ $.ajax({
     },
 
     error: function(){
-        alert("Failed to load comments.");
+       // alert("Failed to load comments.");
     }
 })
