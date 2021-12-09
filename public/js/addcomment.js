@@ -30,7 +30,7 @@ commentBtn.click(function(){
         },
 
         error: function(){
-            alert("There was an error sending your comment. Please try again later.");
+           // alert("There was an error sending your comment. Please try again later.");
         }
     });
 })
