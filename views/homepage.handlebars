@@ -1,6 +1,6 @@
 <!-- Loop over each object in the blog array -->
 {{#each blogs as |blog| }}
-<div class="row mb-4 blog justify-center">
+<div class="row mb-4 blog justify-center" blog-id={{blog.id}}>
   <div class="col-md-6">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -14,9 +14,24 @@
       {{blog.content}}
     </p>
   </div>
-  <div class="col-md-6 justify-center">
-      <textarea rows="10" cols="50"></textarea>
-      <button class="comment-btn">Add Comment</button>
-  </div>
+  <div class="col-md-6 justify-center blog-block">
+      <textarea rows="5" cols="40"></textarea>
+      <button class="comment-btn">ADD COMMENT</button>
+      
+      <div class= "upvote-container">
+      <button class="like-or-dislike-btn" data-blog-id={{blog.id}}>
+        <i class="fa fa-thumbs-up"></i>
+      </button>
+      <p class="likecount">0</p>
+
+      <button class="like-or-dislike-btn" data-blog-id={{blog.id}}>
+        <i class="fa fa-thumbs-down"></i>
+      </button>
+      <p class="dislikecount">0</p>
+    </div>
+    </p>
+    </div>
 </div>
 {{/each}}
+
+<script src="./js/upvote.js"></script>
