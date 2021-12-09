@@ -22,12 +22,12 @@
       <button class="like-or-dislike-btn" data-blog-id={{blog.id}}>
         <i class="fa fa-thumbs-up"></i>
       </button>
-      <p class="likecount">0</p>
+      <p class="likecount">{{blog.upvote.like_count}}</p>
 
       <button class="like-or-dislike-btn" data-blog-id={{blog.id}}>
         <i class="fa fa-thumbs-down"></i>
       </button>
-      <p class="dislikecount">0</p>
+      <p class="dislikecount">{{blog.upvote.dislike_count}}</p>
     </div>
     </p>
     </div>

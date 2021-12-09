@@ -31,17 +31,13 @@ Blog.hasMany(Comment, {
   onDelete: 'CASCADE'
 });
 
-Upvotes.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
-Upvotes.belongsTo(Blog, {
-  foreignKey: 'post_id',
+Blog.belongsTo(Upvotes, {
+  foreignKey: 'votes_id',
   onDelete: 'CASCADE'
 });
 
-Blog.hasMany(Upvotes, {
-  foreignKey: 'post_id',
+Upvotes.hasOne(Blog, {
+  foreignKey: 'votes_id',
   onDelete: 'CASCADE'
 });
 

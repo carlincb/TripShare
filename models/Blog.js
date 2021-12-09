@@ -30,14 +30,23 @@ Blog.init(
         model: 'user',
         key: 'id',
       },
-      image: {
-        type: DataTypes.MEDIUMBLOB,
-        allowNull: true,
-        defaultValue: null
-      }
     },
-  },
-  {
+    votes_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'upvotes',
+          key: 'id',
+        },
+    },
+    // image: {
+    //     type: DataTypes.MEDIUMBLOB,
+    //     allowNull: true,
+    //     defaultValue: null
+    //   },
+    },
+  
+  
+    {
     sequelize,
     timestamps: false,
     freezeTableName: true,
