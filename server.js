@@ -4,14 +4,6 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-const cloudinary = require('cloudinary');
-require('dotenv').config()
-
-cloudinary.config({
-  cloud_name: process.env.cloud_name, 
-  api_key: process.env.api_key,
-  api_secret: process.env.api_secret
-})
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
