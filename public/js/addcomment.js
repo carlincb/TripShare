@@ -22,7 +22,11 @@ commentBtn.click(function(){
         success: function(){
             console.log('comment added successfully');
             console.log(commentAppendSpot)
-            commentAppendSpot.append(`<p>${commentText}</p>`);
+            commentAppendSpot.append(`<article class="comment-block">
+                <span></span>
+                <span>${new Date()}</span>
+                <p>${commentText}</p>
+            </article>`);
         },
 
         error: function(){
