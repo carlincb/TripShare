@@ -10,8 +10,18 @@ likecontainer.addEventListener('click',  function (event) {
     console.log(El);
     let likecount = parseInt(El.textContent);
     likecount++;
-    El.textContent = likecount
+    El.textContent = likecount;
+
+
   }
+
+  $.ajax({
+    type: "PUT",
+    dataType: "json",
+    data: {
+      
+    }
+  })
 });
 
 

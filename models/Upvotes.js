@@ -12,7 +12,14 @@ Upvotes.init(
       autoIncrement: true,
     },
     upvotes: {
-type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    downvotes: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
     },
     date_created: {
       type: DataTypes.DATE,
@@ -25,6 +32,13 @@ type: DataTypes.INTEGER
         model: 'user',
         key: 'id',
       },
+    blog_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'blog',
+        key: 'id'
+      }
+    }
     },
   },
   {
