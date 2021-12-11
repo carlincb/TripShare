@@ -21,9 +21,11 @@ commentBtn.click(function(){
 
         success: function(){
             console.log('comment added successfully');
-            console.log(commentAppendSpot)
+            console.log(commentAppendSpot);
+            userName = $('nav label').text();
+            console.log($('nav label').text());
             commentAppendSpot.append(`<article class="comment-block">
-                <span></span>
+                <span>${userName.substr(8)}</span>
                 <span>${new Date()}</span>
                 <p>${commentText}</p>
             </article>`);

@@ -12,7 +12,14 @@ Upvotes.init(
       autoIncrement: true,
     },
     upvotes: {
-type: DataTypes.INTEGER
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
+    downvotes: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     },
     date_created: {
       type: DataTypes.DATE,
@@ -25,6 +32,13 @@ type: DataTypes.INTEGER
         model: 'user',
         key: 'id',
       },
+    blog_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'blog',
+        key: 'id'
+      }
+    }
     },
   },
   {
