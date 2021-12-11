@@ -14,11 +14,19 @@ router.get('/', async (req, res) => {
       ],
     });
 
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
+
+    const user = userData.get({ plain: true });
+
     // Serialize data so the template can read it
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
+      ...user,
       blogs, 
       logged_in: req.session.logged_in 
     });

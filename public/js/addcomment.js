@@ -23,7 +23,7 @@ commentBtn.click(function(){
             console.log('comment added successfully');
             console.log(commentAppendSpot)
             commentAppendSpot.append(`<article class="comment-block">
-                <span></span>
+                <span>${req.session.user.name}</span>
                 <span>${new Date()}</span>
                 <p>${commentText}</p>
             </article>`);

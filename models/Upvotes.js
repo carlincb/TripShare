@@ -12,7 +12,7 @@ Upvotes.init(
       autoIncrement: true,
     },
     upvotes: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
     },
