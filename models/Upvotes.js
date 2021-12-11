@@ -14,12 +14,12 @@ Upvotes.init(
     upvotes: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: false
     },
     downvotes: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: false
     },
     date_created: {
       type: DataTypes.DATE,
