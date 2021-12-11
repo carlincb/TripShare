@@ -17,7 +17,7 @@ Blog.init(
     },
     content: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -30,11 +30,11 @@ Blog.init(
         model: 'user',
         key: 'id',
       },
-      image: {
-        type: DataTypes.MEDIUMBLOB,
-        allowNull: true,
-        defaultValue: null
-      }
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: null,
     },
   },
   {
