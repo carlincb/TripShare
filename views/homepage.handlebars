@@ -7,6 +7,9 @@
       
       <a href="/blog/{{blog.id}}">{{blog.title}}</a>
     </h2>  
+    {{#if blog.image}}
+    <img src="upload/{{blog.image}}">
+    {{/if}}
     <p>posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
   </div>
   <div class="col-md-7">
