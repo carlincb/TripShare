@@ -30,7 +30,7 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <label>Welcome {{name}}</label> |
+        <label user-id={{id}}>Welcome {{name}}</label> |
         <a href="/profile">Dashboard</a> |
         <button class="no-button" id="logout">Logout</button>
         
@@ -55,6 +55,7 @@
   {{#if logged_in}}
   <script src="/js/addcomment.js"></script>
   <script src="/js/logout.js"></script>
+  <script src="/js/upvote.js"></script>
   {{/if}}
 </body>
 
