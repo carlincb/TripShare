@@ -9,18 +9,20 @@ $.ajax({
             //Sets up the upvote counts for each block
             $('.blog-block').each(function(){
                 console.log($(this).parent().attr('blog-id'));
-                upvoteArea = $(this).children('.upvote-container .like-btn')
+                upvoteArea = $(this).children('.upvote-container').children('.likecount');
                 upvoteCount = parseInt(upvoteArea.text());
-                dislikeArea = $(this).children('.upvote-container .dislike-btn');
+                dislikeArea = $(this).children('.upvote-container').children('.dislikecount');
                 dislikeCount = parseInt(dislikeArea.text());
+                console.log(dislikeCount);
+                console.log($(this));
 
                 //Adds to the count if the data comes back as true
-                if($(this).parent().attr('blog-id') == upvotes.blog_id && upvotes.upvotes){
+                if($(this).parent().attr('blog-id') == upvotes.post_id && upvotes.upvotes){
                     upvoteCount++;
                     upvoteArea.text(upvoteCount);
                 }
 
-                if($(this).parent().attr('blog-id') == upvotes.blog_id && upvotes.downvotes){
+                if($(this).parent().attr('blog-id') == upvotes.post_id && upvotes.downvotes){
                     dislikeCount++;
                     dislikeArea.text(dislikeCount);
                 }

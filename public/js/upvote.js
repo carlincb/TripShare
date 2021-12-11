@@ -78,7 +78,7 @@ function existChecker(statementExecuted, upvotes, downvotes, blogId) {
             "upvotes": upvotes,
             "downvotes": downvotes,
             "user_id": parseInt($('nav label').attr('user-id')),
-            "blog_id": blogId
+            "post_id": blogId
         }, 
         function(){
             console.log("vote added");
