@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
       res.render('homepage', { 
         ...user,
         blogs, 
-        logged_in: req.session.logged_in 
+        logged_in: true 
       });
     }
     else{
