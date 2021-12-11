@@ -8,17 +8,19 @@
       <a href="/blog/{{blog.id}}">{{blog.title}}</a>
     </h2>  
     {{#if blog.image}}
+    <div class="imagesize">
     <img src="upload/{{blog.image}}">
+    </div>
     {{/if}}
-    <p>posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+    <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
   </div>
   <div class="col-md-7">
     <p>
       {{blog.content}}
     </p>
   </div>
-  <div class="col-md-6 justify-center blog-block">
-      <textarea rows="5" cols="40"></textarea> 
+    <div class="col-md-6 justify-center blog-block">
+      <textarea rows="5" cols="20"></textarea> 
       <button class="comment-btn">ADD COMMENT</button> 
       <div class= "upvote-container">
       <button class="like-btn" data-blog-id={{blog.id}}>
@@ -30,7 +32,7 @@
         <i class="fa fa-thumbs-down"></i>
       </button>
       <p class="dislikecount">0</p>
-      </div>
+    </div>
     </div>
 </div>
 {{/each}}

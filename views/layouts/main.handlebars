@@ -16,8 +16,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src = "\js\jquery.dm-uploader.js"></script>
 </head>
 
 <body>
@@ -31,7 +29,7 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <label user-id={{id}}>Welcome {{name}}</label> |
-        <a href="/profile">Dashboard</a> |
+        <a href="/profile">Profile</a> |
         <button class="no-button" id="logout">Logout</button>
         
         {{else}}

@@ -64,3 +64,9 @@ button:hover {
 .comment-btn:hover {
   color: whitesmoke;
 }
+
+.imagesize img {
+  height: 20rem;
+  width: 20rem;
+  object-fit: contain;
+}
