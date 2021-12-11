@@ -11,7 +11,7 @@ likeBtn.click(function(){
     $.get(window.location.href + 'api/upvotes', function(data){
         console.log(data);
         data.forEach(upvote => {
-            if (upvote.user_id == $('nav label').attr('user-id') && upvote.blog_id == blogId) {
+            if (upvote.user_id == $('nav label').attr('user-id') && upvote.post_id == blogId) {
                 statementExecuted = true;
                 if (!upvote.upvotes && !upvote.downvotes) {
                     upvotes = true;
@@ -41,11 +41,12 @@ dislikeBtn.click(function(){
     VariableDeclare($(this));
     var upvotes = false;
     var downvotes = true;
+    console.log(statementExecuted);
 
     $.get(window.location.href + 'api/upvotes', function(data){
         console.log(data);
         data.forEach(upvote => {
-            if (upvote.user_id == $('nav label').attr('user-id') && upvote.blog_id == blogId) {
+            if (upvote.user_id == $('nav label').attr('user-id') && upvote.post_id == blogId) {
                 statementExecuted = true;
                 if (!upvote.upvotes && !upvote.downvotes) {
                     downvotes = true;
@@ -85,7 +86,15 @@ function existChecker(statementExecuted, upvotes, downvotes, blogId) {
         });
     }
     else {
-        $.put()
+        $.ajax({
+            url: window.location.href + 'api/upvotes' + upvoteId,
+            type: 'PUT',
+            dataType: 'json',
+            data: {
+                "upvotes": upvotes,
+                "downvotes": downvotes
+            }
+        })
     }
 }
 
