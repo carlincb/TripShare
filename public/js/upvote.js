@@ -2,7 +2,9 @@ var likeBtn = $('.like-btn');
 var dislikeBtn = $('.dislike-btn');
 
 likeBtn.click(function(){
-    VariableDeclare($(this))
+    VariableDeclare($(this));
+    var upvotes = true;
+    var downvotes = false;
     console.log(likeSpot)
     console.log(blogId)
 
@@ -12,16 +14,16 @@ likeBtn.click(function(){
             if (upvote.user_id == $('nav label').attr('user-id') && upvote.blog_id == blogId) {
                 statementExecuted = true;
                 if (!upvote.upvotes && !upvote.downvotes) {
-                    upvote.upvotes = true;
+                    upvotes = true;
                     likeCount++;
                 }
                 else if (upvote.upvotes && !upvote.downvotes) {
-                    upvote.upvotes = false;
+                    upvotes = false;
                     likeCount--;
                 }
                 else if (!upvote.upvotes && upvote.downvotes) {
-                    upvote.upvotes = true;
-                    upvote.downvotes = false;
+                    upvotes = true;
+                    downvotes = false;
                     likeCount++;
                     dislikeCount--;
                 }
@@ -31,12 +33,14 @@ likeBtn.click(function(){
             }
         });
 
-        existChecker(statementExecuted);
+        existChecker(statementExecuted, upvotes, downvotes, blogId);
     });
 });
 
 dislikeBtn.click(function(){
     VariableDeclare($(this));
+    var upvotes = false;
+    var downvotes = true;
 
     $.get(window.location.href + 'api/upvotes', function(data){
         console.log(data);
@@ -44,17 +48,17 @@ dislikeBtn.click(function(){
             if (upvote.user_id == $('nav label').attr('user-id') && upvote.blog_id == blogId) {
                 statementExecuted = true;
                 if (!upvote.upvotes && !upvote.downvotes) {
-                    upvote.downvotes = true;
+                    downvotes = true;
                     dislikeCount++;
                 }
                 else if (upvote.upvotes && !upvote.downvotes) {
-                    upvote.upvotes = false;
-                    upvote.downvotes = true;
+                    upvotes = false;
+                    downvotes = true;
                     likeCount--;
                     dislikeCount++;
                 }
                 else if (!upvote.upvotes && upvote.downvotes) {
-                    upvote.downvotes = false;
+                    var downvotes = false;
                     dislikeCount--;
                 }
                 else {
@@ -63,18 +67,25 @@ dislikeBtn.click(function(){
             }
         });
 
-        existChecker(statementExecuted);
+        existChecker(statementExecuted, upvotes, downvotes, blogId);
     })
 });
 
-function existChecker(statementExecuted) {
+function existChecker(statementExecuted, upvotes, downvotes, blogId) {
     if(!statementExecuted){
-        $.post(window.location.href + 'api/upvotes', function(){
-            
+        $.post(window.location.href + 'api/upvotes', 
+        {
+            "upvotes": upvotes,
+            "downvotes": downvotes,
+            "user_id": parseInt($('nav label').attr('user-id')),
+            "blog_id": blogId
+        }, 
+        function(){
+            console.log("vote added");
         });
     }
     else {
-
+        $.put()
     }
 }
 
@@ -84,4 +95,5 @@ function VariableDeclare(currentEl) {
     dislikeSpot = currentEl.siblings('.dislikecount').text();
     dislikeCount = parseInt(dislikeSpot);
     blogId = currentEl.parents('.blog').attr('blog-id');
+    statementExecuted = false;
 }
