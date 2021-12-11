@@ -8,7 +8,7 @@ var storage = multer.diskStorage({
   destination: './public/upload',
   filename: function (req, file, cb) {
     /*Appending extension with original name*/
-    cb(null, file.originalname) 
+    cb(null, file.originalname)
   }
 })
 
@@ -18,16 +18,23 @@ router.post('/newimage', upload.single('image'), async (req, res) => {
   console.log('newimage')
   console.log(req.body);
   console.log(req.file);
-  if (req.file){
-    const newBlog = await Blog.create({
-      title: req.body.title,
-      content: req.body.content,
-      user_id: req.session.user_id,
-      image: req.file.originalname
-    })
-    // res.json(req.file)
-    res.redirect('/');
-  } else throw 'error'
+  try {
+
+
+    if (req.file) {
+      const newBlog = await Blog.create({
+        title: req.body.title,
+        content: req.body.content,
+        user_id: req.session.user_id,
+        image: req.file.originalname
+      })
+      // res.json(req.file)
+      res.redirect('/');
+    }
+  } catch (error) {
+    console.error(error)
+    res.status(500).json("Please post better content")
+  }
 });
 
 router.post('/', withAuth, async (req, res) => {
@@ -48,7 +55,7 @@ router.put('/:id', withAuth, async (req, res) => {
     const editBlog = await Blog.update({
       ...req.body,
       user_id: req.session.user_id,
-    },{
+    }, {
       where: {
         id: req.params.id,
       },
