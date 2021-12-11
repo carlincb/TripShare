@@ -197,9 +197,9 @@ $(document).ready(() => { $('#uploader').on("change", function(e){
 //   }
 // }
 
-document
-  .querySelector('.new-blog-form')
-  .addEventListener('submit', newFormHandler);
+// document
+//   .querySelector('.new-blog-form')
+//   .addEventListener('submit', newFormHandler);
 
 document
   .querySelector('.blog-list')
