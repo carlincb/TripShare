@@ -28,7 +28,7 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <label>Welcome {{name}}</label> |
+        <label user-id={{id}}>Welcome {{name}}</label> |
         <a href="/profile">Profile</a> |
         <button class="no-button" id="logout">Logout</button>
         
@@ -48,10 +48,12 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/js/getcomments.js"></script>
+  <script src="/js/getupvotes.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/addcomment.js"></script>
   <script src="/js/logout.js"></script>
+  <script src="/js/upvote.js"></script>
   {{/if}}
 </body>
 

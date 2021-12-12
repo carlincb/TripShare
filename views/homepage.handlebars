@@ -19,17 +19,16 @@
       {{blog.content}}
     </p>
   </div>
-  <div class="col-md-6 justify-center blog-block">
-      <textarea rows="5" cols="20"></textarea>
-      <button class="comment-btn">ADD COMMENT</button>
-      
-    <div class= "upvote-container">
-      <button class="like-or-dislike-btn" data-blog-id={{blog.id}}>
+    <div class="col-md-6 justify-center blog-block">
+      <textarea rows="5" cols="20"></textarea> 
+      <button class="comment-btn">ADD COMMENT</button> 
+      <div class= "upvote-container">
+      <button class="like-btn" data-blog-id={{blog.id}}>
         <i class="fa fa-thumbs-up"></i>
       </button>
       <p class="likecount">0</p>
 
-      <button class="like-or-dislike-btn" data-blog-id={{blog.id}}>
+      <button class="dislike-btn" data-blog-id={{blog.id}}>
         <i class="fa fa-thumbs-down"></i>
       </button>
       <p class="dislikecount">0</p>
