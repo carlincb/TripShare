@@ -12,18 +12,23 @@ likeBtn.click(function(){
     $.get(window.location.href + 'api/upvotes', function(data){
         console.log(data);
         data.forEach(upvote => {
-            if (upvote.user_id == $('nav label').attr('user-id') && upvote.post_id == blogId) {
+            if (upvote.user_id === parseInt($('nav label').attr('user-id')) && upvote.post_id === parseInt(blogId)) {
                 upvoteId = upvote.id;
                 statementExecuted = true;
                 if (!upvote.upvotes && !upvote.downvotes) {
+                    console.log('1')
+                    downvotes = false;
                     upvotes = true;
                     likeCount++;
                 }
                 else if (upvote.upvotes && !upvote.downvotes) {
+                    console.log('2')
+                    downvotes = false; 
                     upvotes = false;
                     likeCount--;
                 }
                 else if (!upvote.upvotes && upvote.downvotes) {
+                    console.log('3')
                     upvotes = true;
                     downvotes = false;
                     likeCount++;
@@ -49,21 +54,26 @@ dislikeBtn.click(function(){
     $.get(window.location.href + 'api/upvotes', function(data){
         console.log(data);
         data.forEach(upvote => {
-            if (upvote.user_id == $('nav label').attr('user-id') && upvote.post_id == blogId) {
+            if (upvote.user_id === parseInt($('nav label').attr('user-id')) && upvote.post_id === parseInt(blogId)) {
                 upvoteId = upvote.id;
                 statementExecuted = true;
                 if (!upvote.upvotes && !upvote.downvotes) {
+                    console.log('1')
+                    upvotes = false;
                     downvotes = true;
                     dislikeCount++;
                 }
                 else if (upvote.upvotes && !upvote.downvotes) {
+                    console.log('2')
                     upvotes = false;
                     downvotes = true;
                     likeCount--;
                     dislikeCount++;
                 }
                 else if (!upvote.upvotes && upvote.downvotes) {
-                    var downvotes = false;
+                    console.log('3')
+                    downvotes = false;
+                    upvotes = false;
                     dislikeCount--;
                 }
                 else {
@@ -79,6 +89,8 @@ dislikeBtn.click(function(){
 //Function that checks for the existance of already existing user upvote data then makes the appropriate request
 function existChecker(statementExecuted, upvotes, downvotes, blogId) {
     if(!statementExecuted){
+        console.log('post running');
+        console.log(`downvotes: ${downvotes} upvotes: ${upvotes}`)
         $.post(window.location.href + 'api/upvotes', 
         {
             "upvotes": upvotes,
@@ -93,6 +105,8 @@ function existChecker(statementExecuted, upvotes, downvotes, blogId) {
         });
     }
     else {
+        console.log('put running');
+        console.log(`downvotes: ${downvotes} upvotes: ${upvotes}`)
         $.ajax({
             url: window.location.href + 'api/upvotes/' + upvoteId,
             type: 'PUT',
@@ -100,11 +114,11 @@ function existChecker(statementExecuted, upvotes, downvotes, blogId) {
             data: {
                 "upvotes": upvotes,
                 "downvotes": downvotes,
-                "post_id": blogId
             },
             success: function(){
                 dislikeSpot.text(dislikeCount);
                 likeSpot.text(likeCount);
+                console.log("upvoteId: ", upvoteId);
             }
         })
     }

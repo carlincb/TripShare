@@ -28,10 +28,11 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-      const newUpvotes = await Upvotes.create({
-          ...req.body, 
-          user_id: req.session.user_id,
-      })
+      const newUpvotes = await Upvotes.update(req.body, {
+        where: {
+          id: req.params.id
+        }
+      });
       res.status(200).json(newUpvotes);
   } catch (err) {
       res.status(400).json(err)
