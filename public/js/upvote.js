@@ -89,6 +89,7 @@ dislikeBtn.click(function(){
 //Function that checks for the existance of already existing user upvote data then makes the appropriate request
 function existChecker(statementExecuted, upvotes, downvotes, blogId) {
     if(!statementExecuted){
+        upvotes ? likeCount++ : dislikeCount++;
         console.log('post running');
         console.log(`downvotes: ${downvotes} upvotes: ${upvotes}`)
         $.post(window.location.href + 'api/upvotes', 
