@@ -2,11 +2,11 @@ var commentBtn = $('.comment-btn');
 var commentText;
 
 commentBtn.click(function(){
-    commentText = $(this).siblings('textarea').val();
+    commentText = $(this).parent().siblings('textarea').val();
     console.log(commentText);
     blogId = $(this).parents('.blog').attr('blog-id');
     console.log(blogId);
-    commentAppendSpot = $(this).parent();
+    commentAppendSpot = $(this).parent().parent();
 
     $.ajax({
         url: window.location.href + 'api/comments',
@@ -25,7 +25,7 @@ commentBtn.click(function(){
             userName = $('nav label').text();
             console.log($('nav label').text());
             commentAppendSpot.append(`<article class="comment-block">
-                <span>${userName.substr(8)}</span>
+                <span>${userName.substr(8).slice(0, -6)}</span>
                 <span>${new Date()}</span>
                 <p>${commentText}</p>
             </article>`);
@@ -35,4 +35,4 @@ commentBtn.click(function(){
          //   alert("There was an error sending your comment. Please try again later.");
         }
     });
-})
+});
