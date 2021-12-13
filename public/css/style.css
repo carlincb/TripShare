@@ -2,8 +2,31 @@ header,
 .blog:not(:last-child) {
   border-bottom: 0.1rem solid #ccc;
 }
-h1 {
+h1,
+.likecount,
+.dislikecount {
   font-family: 'Special Elite', cursive;
+}
+nav {
+  float: right;
+}
+nav ul li {
+  display: inline-flex;
+  justify-content: space-around;
+  padding: 0.75rem;
+}
+.likecount,
+.dislikecount {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.like-btn {
+  color: darkgreen;
+  border-radius: 0.75rem;
+}
+.dislike-btn {
+  color: darkred;
+  border-radius: 0.75rem;
 }
 
 .no-button {
@@ -53,6 +76,10 @@ button:hover {
   color: rgb(135, 103, 23);
   opacity: 0.8;
 }
+label:hover {
+  color: rgb(135, 103, 23);
+  opacity: 0.8;
+}
 .comment-btn {
   background-color: rgb(36, 86, 87);
   color: whitesmoke;
@@ -69,4 +96,40 @@ button:hover {
   height: 20rem;
   width: 20rem;
   object-fit: contain;
+}
+
+@media screen and (max-width: 599px) {
+  nav ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+}
+@media screen and (max-width: 446px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .imagesize img {
+    height: 15rem;
+    width: 15rem;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 356px) {
+  header {
+    margin: 1rem;
+  }
+}
+@media screen and (max-width: 285px) {
+  .imagesize img {
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
+  }
 }
