@@ -28,10 +28,17 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <label user-id={{id}}>Welcome {{name}}</label> |
-        <a href="/profile">Profile</a> |
-        <button class="no-button" id="logout">Logout</button>
-        
+        <ul>
+          <li>
+            <label user-id={{id}}>Welcome {{name}}</label>
+          </li>
+          <li>
+            <a href="/profile">Profile</a>
+          </li>
+          <li>
+            <label class="no-button" id="logout">Logout</label>
+          </li>
+        </ul>
         {{else}}
         <a href="/login">Login</a>
         {{/if}}
