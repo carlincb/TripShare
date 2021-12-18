@@ -30,6 +30,13 @@ router.post('/newimage', upload.single('image'), async (req, res) => {
       })
       // res.json(req.file)
       res.redirect('/');
+    } else {
+      const newBlog = await Blog.create({
+        title: req.body.title,
+        content: req.body.content,
+        user_id: req.session.user_id
+      })
+      res.redirect('/');
     }
   } catch (error) {
     console.error(error)
