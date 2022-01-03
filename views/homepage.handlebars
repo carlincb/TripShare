@@ -10,7 +10,8 @@
     </h2>  
     {{#if blog.image}}
     <div class="imagesize">
-    <img src="upload/{{blog.image}}">
+        {{!-- <img src="upload/{{blog.image}}"> --}}
+        <img src="{{blog.image}}" alt="">
     </div>
     {{/if}}
     <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
@@ -49,7 +50,8 @@
     </h2>  
     {{#if blog.image}}
     <div class="imagesize">
-    <img src="upload/{{blog.image}}">
+        {{!-- <img src="upload/{{blog.image}}"> --}}
+        <img src="{{blog.image}}" alt="">
     </div>
     {{/if}}
     <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>

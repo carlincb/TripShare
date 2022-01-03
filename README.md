@@ -2,10 +2,10 @@
 
 ## Description
 
-A Travel Blog, using Node, Express, Sequelize, Multer, MySQL, and deployed on Heroku.
+A Travel Blog, using Node, Express, Sequelize, Cloudinary, MySQL, and deployed on Heroku.
 
 **Tools & Skills Used**<br>
-Node.js, Express.js, Sequelize, Multer, MySQL and Heroku.
+Node.js, Express.js, Sequelize, Cloudinary, MySQL and Heroku.
 
 ## User Story
 

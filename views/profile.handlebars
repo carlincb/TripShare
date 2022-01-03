@@ -1,54 +1,76 @@
-
-<div class="row mt-4">
-  <div class="col-md-6">
+<div class='row mt-4'>
+  <div class='col-md-6'>
     <h3>Create New Blog Post:</h3>
-      <form method="post" action="api/blog/newimage" enctype="multipart/form-data" class="form new-blog-form"> 
-      {{!-- <button id="upload_widget" class="cloudinary-button">Upload files</button> --}}
-  <div class="form-group">
-        <label for="blog-name">Title:</label>
-        <input class="form-input" type="text" id="blog-name" name="title" />
-        </div>
-      <div class="form-group">
-        <label for="blog-desc">Content:</label>
-        <textarea class="form-input" id="blog-desc" name="content" rows="10" cols="20"></textarea>
+    {{! <form method="post" action="api/blog/newimage" enctype="multipart/form-data" class="form new-blog-form">  }}
+    <form class='form new-blog-form'>
+
+      <div class='form-group'>
+        <label for='blog-name'>Title:</label>
+        <input class='form-input' type='text' id='blog-name' name='title' />
       </div>
-      <div class="form-group">
+      <div class='form-group'>
+        <label for='blog-desc'>Content:</label>
+        <textarea
+          class='form-input'
+          id='blog-desc'
+          name='content'
+          rows='10'
+          cols='20'
+        ></textarea>
+      </div>
+      {{! <div class="form-group">
         <input type="file" accept="image/*" name="image" />
+      </div> }}
+      <div class='form-group'>
+        <button id='upload_widget' class='cloudinary-button'>Upload Photos</button></div>
+      <div class='form-group'>
+        <button
+          type='submit'
+          class='btn btn-primary'
+          id='submit-new-blog'
+        >Create</button>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-      </form>
+      {{! </form> }}
+    </form>
   </div>
 
   {{#if blogs.length}}
-  <div class="col-md-6 blog-list">
-    <h3>Your Blog Posts:</h3>
+    <div class='col-md-6 blog-list'>
+      <h3>Your Blog Posts:</h3>
 
-    {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
-      </div>
-      <div class="row justify-center">
-        {{#if blog.image}}
-      <div class="imagesize">
-        <img src="upload/{{blog.image}}">
-      </div>
-      {{/if}}
-      <div class="col-md-4">
-        <button id="deleteblog" class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
-      </div>
-      </div>
+      {{#each blogs as |blog|}}
+        <div class='row mb-2'>
+          <div class='col-md-8'>
+            <h4><a href='/blog/{{blog.id}}'>{{blog.title}}</a></h4>
+          </div>
+          <div class='row justify-center'>
+            {{#if blog.image}}
+              <div class='imagesize'>
+                {{!-- <img src="upload/{{blog.image}}"> --}}
+                <img src='{{blog.image}}' alt='' />
+              </div>
+            {{/if}}
+            <div class='col-md-4'>
+              <button
+                id='deleteblog'
+                class='btn btn-sm btn-danger'
+                data-id='{{blog.id}}'
+              >DELETE</button>
+            </div>
+          </div>
+        </div>
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
   {{/if}}
 </div>
-{{!-- <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>   --}}
-<script src="./js/profile.js"></script>
+<script
+  src='https://upload-widget.cloudinary.com/global/all.js'
+  type='text/javascript'
+></script>
+<script src='./js/profile.js'></script>
 
-<script type = "text/html" id = "debug-template">
-<li class = "list-group-item text-%%color%%"> <strong> %%date%%</strong>:%%message%%</li>
+<script type='text/html' id='debug-template'>
+  <li class = "list-group-item text-%%color%%"> <strong>
+  %%date%%</strong>:%%message%%</li>
 </script>
-<ul class = "list-group list-group-flush" id="debug"></ul>
+<ul class='list-group list-group-flush' id='debug'></ul>
