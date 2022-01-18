@@ -4,6 +4,8 @@
 
 A Travel Blog, using Node, Express, Sequelize, Multer, MySQL, and deployed on Heroku.
 
+![Image of the main page of the website showing a blog post.](./public/images/tripshare-image.png)
+
 **Tools & Skills Used**<br>
 Node.js, Express.js, Sequelize, Multer, MySQL and Heroku.
 
