@@ -2,7 +2,7 @@
 
 ## Description
 
-A Travel Blog, using Node, Express, Sequelize, Cloudinary, MySQL, and deployed on Heroku.
+A Travel Blog, using Node, Express, Sequelize, Cloudinary, MySQL, and deployed on Heroku. The app allows users to make travel blog posts with an image. Users can also add comments and likes on the posts.
 
 ![Image of the main page of the website showing a blog post.](./public/images/tripshare-image.png)
 
