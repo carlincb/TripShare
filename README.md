@@ -103,7 +103,7 @@ No contributions needed at this time, but please feel free to contact me at my e
 
 ## Links
 
-[Heroku Live Link](https://blooming-ridge-32748.herokuapp.com/)
+[Heroku Live Link] Deleted due to Heroku starting to charge for hosting the site.
 
 [GitHub Link](https://github.com/carlincb/TripShare)
 
