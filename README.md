@@ -103,9 +103,9 @@ No contributions needed at this time, but please feel free to contact me at my e
 
 ## Links
 
-[Heroku Live Link] Deleted due to Heroku starting to charge for hosting the site.
-
 [GitHub Link](https://github.com/carlincb/TripShare)
+
+Heroku Live Link deleted due to Heroku starting to charge for hosting the site.
 
 ## Questions
 
